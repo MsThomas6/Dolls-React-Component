@@ -1,0 +1,37 @@
+
+
+
+ALTER proc [dbo].[Friends_Delete]
+ @Id int 
+ 
+
+
+as
+/*
+
+
+ Declare @Id int = 
+
+   Select * 
+   From dbo.Friends
+   Where Id = @Id;
+
+
+Execute dbo.Frieds_Delete
+
+   Select * 
+   From dbo.Friends
+   Where Id = @Id;
+
+*/
+
+BEGIN
+
+
+   DELETE FROM [dbo].[Friends]
+  Where Id = @Id;
+
+
+
+
+END 
