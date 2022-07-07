@@ -1,0 +1,73 @@
+ALTER   proc[dbo].[Friends_Insert]
+
+@Title nvarchar(50)
+,@Bio nvarchar(50)
+,@Summary nvarchar(50)
+,@Headline nvarchar(50)
+,@Slug nvarchar(50)
+,@PrimaryImageId int
+,@StatusId int 
+,@UserId int 
+,@Id int OUTPUT
+
+as
+
+
+/*
+
+Declare @Id int = 0
+
+Declare @Title nvarchar(50) = 'Superstar'
+,@Bio nvarchar(50) = 'I love to Sing'
+,@Summary nvarchar(50) = 'Who can sing better'
+,@Headline nvarchar(50) = 'I love me'
+,@Slug nvarchar(50) = 'Superstar679860'
+,@PrimaryImageId int = 1
+,@StatusId int = 6
+,@UserId int = 1
+
+
+Execute dbo.Friends_Insert
+@Title 
+,@Bio 
+,@Summary 
+,@Headline
+,@Slug
+,@PrimaryImageId
+,@StatusId 
+,@UserId 
+,@Id OUTPUT
+
+
+
+Select * 
+from dbo.Friends
+
+*/
+BEGIN
+
+
+INSERT INTO [dbo].[Friends]
+           (
+		   [Title]
+           ,[Bio]
+           ,[Summary]
+           ,[Headline]
+           ,[Slug]
+		   ,[PrimaryImageId]
+           ,[StatusId]
+           ,[UserId])
+     VALUES
+           (@Title,
+		    @Bio,
+            @Summary,
+            @Headline,
+            @Slug, 
+			@PrimaryImageId,
+            @StatusId,
+            @UserId)
+
+
+		     Set @Id = SCOPE_IDENTITY();
+
+END 
